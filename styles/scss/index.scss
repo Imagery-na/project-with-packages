@@ -1,11 +1,52 @@
 @import 'header';
+@import 'variables';
+@import 'mixins';
+@import 'fonts';
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+%button {
+  @extend .body-2;
+
+  padding: 16px 32px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-button {
+  @extend %button;
+
+  color: $white;
+  background-color: $accent;
+  border: 1px solid $accent;
+  transition: $default-transition;
+
+  &:hover {
+    color: $accent;
+    background-color: $white;
+    border: 1px solid $accent;
+    transition: $default-transition;
+  }
+}
+
+.secondary-button {
+  @extend %button;
+
+  color: $secondary;
+  background-color: $white;
+
+  &:hover {
+    color: $accent;
+    transition: $default-transition;
+  }
 }

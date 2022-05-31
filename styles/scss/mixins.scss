@@ -1,0 +1,141 @@
+@import 'variables';
+
+// Adaptive mixins
+@mixin max-width($resolution) {
+  @media screen and (max-width: #{$resolution}px) {
+    @content;
+  }
+}
+
+@mixin min-width($resolution) {
+  @media screen and (min-width: #{$resolution}px) {
+    @content;
+  }
+}
+
+@mixin max-height($resolution) {
+  @media screen and (max-height: #{$resolution}px) {
+    @content;
+  }
+}
+
+@mixin min-height($resolution) {
+  @media screen and (min-height: #{$resolution}px) {
+    @content;
+  }
+}
+
+@mixin break1640 {
+  @media (max-width: 1640px) {
+    @content;
+  }
+}
+
+@mixin break1280 {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin break1024 {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin break920 {
+  @media (max-width: 920px) {
+    @content;
+  }
+}
+
+@mixin break768 {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin break480 {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
+// Сильное уменьшение шрифта с уменьшением ширины экрана (для заголовков и подзаголовков)
+@mixin font-strong-reduction($initial-font-size, $initial-line-height) {
+  font-size: $initial-font-size;
+  line-height: $initial-line-height;
+
+  @include max-width(1000) {
+    font-size: $initial-font-size * 0.85;
+    line-height: $initial-line-height * 0.85;
+  }
+
+  @include max-width(480) {
+    font-size: $initial-font-size * 0.65;
+    line-height: $initial-line-height * 0.65;
+  }
+}
+
+// Слабое уменьшение шрифта с уменьшением ширины экрана (для более мелкого текста)
+@mixin font-weak-reduction($initial-font-size, $initial-line-height) {
+  font-size: $initial-font-size;
+  line-height: $initial-line-height;
+
+  @include max-width(1000) {
+    font-size: $initial-font-size * 0.9;
+    line-height: $initial-line-height * 0.9;
+  }
+
+  @include max-width(480) {
+    font-size: $initial-font-size * 0.85;
+    line-height: $initial-line-height * 0.85;
+  }
+}
+
+// Кастомный скроллбар
+@mixin base-scroll($background: $primary, $track-background: $white, $thumb-background: $secondary) {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: $background;
+  }
+
+  /* set button(top and bottom of the scrollbar) */
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* background of the scrollbar except button or resizer */
+  &::-webkit-scrollbar-track {
+    background-color: $track-background;
+  }
+
+  /* scrollbar itself */
+  &::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: 16px;
+    background-color: $thumb-background;
+  }
+
+  &::-webkit-scrollbar-track:hover {
+    background-color: $track-background;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    border: 0;
+    background-color: $thumb-background;
+  }
+}
+
+// Максимальное число строк текста в блоке
+@mixin line-overflow($lines-count) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: $lines-count;
+  -webkit-line-clamp: $lines-count;
+  -webkit-box-orient: vertical;
+}

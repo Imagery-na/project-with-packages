@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  font-family: 'Oxanium Regular', serif;
+  font-style: normal;
+  font-weight: normal;
+  color: $primary;
+}
+
+.title-1 {
+  @include font-strong-reduction(64px, 80px);
+
+  font-family: 'Oxanium Medium', serif;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.title-2 {
+  @include font-strong-reduction(64px, 80px);
+
+  font-family: 'Oxanium Bold', serif;
+
+  &--white {
+    color: $white;
+  }
+
+  &--accent {
+    color: $accent;
+  }
+}
+
+.subheader-1 {
+  @include font-strong-reduction(32px, 40px);
+
+  font-family: 'Oxanium Regular', serif;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.subheader-2 {
+  @include font-strong-reduction(32px, 40px);
+
+  font-family: 'Oxanium Medium', serif;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.subheader-3 {
+  @include font-strong-reduction(40px, 50px);
+
+  font-family: 'Oxanium Light', serif;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.body-1 {
+  @include font-weak-reduction(20px, 24px);
+
+  font-family: 'Oxanium Regular', serif;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.body-2 {
+  @include font-strong-reduction(20px, 24px);
+
+  font-family: 'Oxanium Bold', serif;
+
+  &--white {
+    color: $white;
+  }
+}
+
+.label-1 {
+  @include font-weak-reduction(16px, 20px);
+
+  font-family: 'Oxanium Regular', serif;
+
+  &--white {
+    color: $white;
+  }
+}
