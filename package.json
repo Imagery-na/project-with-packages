@@ -8,7 +8,8 @@
     "presass": "echo files .scss converted in .css automatically",
     "sass": "sass --watch styles/scss/index.scss:styles/public/style.css",
     "stylelint": "npx stylelint 'styles/scss/*.scss'",
-    "start": "npm run stylelint && npm run sass"
+    "eslint": "npx eslint '**.js'",
+    "start": "npm run eslint && npm run stylelint && npm run sass"
   },
   "author": "Marina Shvets",
   "license": "ISC",
@@ -17,6 +18,8 @@
     "moment": "^2.29.2"
   },
   "devDependencies": {
+    "eslint": "^8.17.0",
+    "postcss-scss": "^4.0.4",
     "sass": "^1.50.0",
     "stylelint": "^14.8.3",
     "stylelint-config-standard-scss": "^3.0.0"
