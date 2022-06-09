@@ -1,0 +1,45 @@
+@import 'variables';
+
+.review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin: 60px 0;
+
+  @include max-width(780) {
+    flex-direction: column;
+  }
+
+  &__img {
+    max-width: 50%;
+    margin-left: 20px;
+
+    @include max-width(780) {
+      max-width: 80%;
+    }
+  }
+
+  &__wrapper {
+    max-width: 460px;
+
+    @include max-width(780) {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    @include line-overflow(4);
+
+    margin-bottom: 30px;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+  }
+}

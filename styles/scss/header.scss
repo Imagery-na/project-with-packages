@@ -1,12 +1,16 @@
 @import 'variables';
 
 .header {
-  height: 150px;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: $secondary;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+  }
 
   &__logo {
     height: 100px;

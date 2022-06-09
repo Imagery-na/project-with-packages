@@ -133,9 +133,21 @@
 
 // Максимальное число строк текста в блоке
 @mixin line-overflow($lines-count) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-clamp: $lines-count;
   -webkit-line-clamp: $lines-count;
-  -webkit-box-orient: vertical;
+  line-clamp: $lines-count;
+}
+
+// Цвета шрифтов
+@mixin fonts-colors() {
+  &--secodary {
+    color: $secondary;
+  }
+
+  &--accent {
+    color: $accent;
+  }
 }

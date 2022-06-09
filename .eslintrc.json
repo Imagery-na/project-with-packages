@@ -13,10 +13,6 @@
             "warn",
             4
         ],
-        "linebreak-style": [
-            "warn",
-            "windows"
-        ],
         "quotes": [
             "warn",
             "single"
@@ -32,6 +28,7 @@
             }
         ],
         "no-console": ["warn"],
-        "no-undef": "off"
+        "no-undef": "off",
+        "linebreak-style": "off"
     }
 }
